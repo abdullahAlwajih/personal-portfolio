@@ -122,3 +122,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# default static files settings for PythonAnywhere.
+# see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
+MEDIA_ROOT = '/home/AbdullahAlWajih/personal-portfolio/media'
+MEDIA_URL = '/media/'
+STATIC_ROOT = '/home/AbdullahAlWajih/personal-portfolio/static'
+STATIC_URL = '/static/'
