@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # installed
     'rest_framework',
+    # self created
+    'user_interface.apps.UserInterfaceConfig',
 ]
 
 MIDDLEWARE = [
@@ -82,6 +85,7 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = "user_interface.User"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -129,3 +133,11 @@ MEDIA_ROOT = '../media'
 MEDIA_URL = 'media/'
 STATIC_ROOT = '../static'
 STATIC_URL = 'static/'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
